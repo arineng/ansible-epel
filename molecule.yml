@@ -1,0 +1,21 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+docker:
+  containers:
+    - name: centos6
+      image: centos
+      image_version: 6
+      ansible_groups:
+        - ci_testing
+
+    - name: centos7
+      image: centos
+      image_version: 7
+      ansible_groups:
+        - ci_testing
+
+verifier:
+  name: testinfra
